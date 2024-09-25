@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: rate_limited_service
+          uri: lb://SOME-SERVICE
+          predicates:
+            - Path=/somepath/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter:
+                  replenishRate: 10  # no of request
+                  burstCapacity: 20 #sudden spikes

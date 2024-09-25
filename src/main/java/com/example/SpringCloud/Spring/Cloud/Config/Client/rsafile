@@ -1,0 +1,1 @@
+keytool -genkeypair -alias my-key -keyalg RSA -dname "CN=Config Server, OU=IT, O=MyCompany, L=City, ST=State, C=Country" -keypass mypassword -keystore configserver.jks -storepass storepassword

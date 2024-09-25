@@ -1,0 +1,14 @@
+server:
+  port:8082
+
+eureka:
+  instance:
+    instance-id:"my-myservice-8082"
+    prefer-ip-address:true
+
+spring:
+  application:
+    name:my-microservice
+
+# java -jar my-myservices.jar --server.port=8081
+# java -jar my-myservices.jar --server.port=8082

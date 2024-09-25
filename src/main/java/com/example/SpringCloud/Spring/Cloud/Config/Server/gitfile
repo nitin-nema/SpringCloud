@@ -1,0 +1,7 @@
+/config-repo
+    /application.yml
+    /application-dev.yml
+    /application-prod.yml
+    /orders-service.yml
+    /orders-service-dev.yml
+    /payment-service.yml

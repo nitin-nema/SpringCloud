@@ -1,0 +1,20 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false  # prevent the eureka server from registrring as a ckient
+    fetch-registry: false # disable the server from fetchng the rgistry of services
+    service-url:
+      defaultZone: https://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+  server:
+    enable-self-preservation: false # false and true in prod
+
+spring:
+  application:
+    name: eureka-server2
+
+#http:localhost: 8761

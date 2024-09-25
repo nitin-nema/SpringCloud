@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: balanced-route
+          uri: lb://MY-SERVICE

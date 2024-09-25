@@ -1,0 +1,18 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000 # Timeout duration for the command
+      circuitBreaker:
+        requestVolumeThreshold: 5 # Minimum number of requests before it trips
+        sleepWindowInMilliseconds: 5000 # Time before the circuit goes half-open
+        errorThresholdPercentage: 50 # Failure threshold to trip the circuit
+
+#Bulkhead patterm
+hystrix:
+  threadpool:
+    externalServicePool:
+      coreSize: 10 # Number of threads in pool
+      maxQueueSize: 20 # Max number of requests queued

@@ -1,0 +1,7 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include:refresh
+
+# http://localhost:8080/acuator/refresh

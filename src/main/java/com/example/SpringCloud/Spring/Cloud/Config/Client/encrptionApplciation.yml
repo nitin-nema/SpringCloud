@@ -1,0 +1,6 @@
+encrpyt:
+  key-store:
+    location: classpath:configserver.jks
+    password: storepassword
+    alias: my-key
+    sectret: mypasswaord

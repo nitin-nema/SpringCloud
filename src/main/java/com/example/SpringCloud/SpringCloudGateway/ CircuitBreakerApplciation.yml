@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: circuit_breaker_route
+          uri: lb://SLOW-SERVICE
+          predicates:
+            - Path=/slow/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: slowServiceCircuitBreaker
+                fallbackUri: forward:/fallback
+

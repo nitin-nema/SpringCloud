@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE   #load balance
+          predicates:
+            - Path=/products/**
+          filters:
+            - AddRequestHeader=X-Request-Foo, Bar
+        - id: inventory-service
+          uri: lb://INVENTORY-SERVICE
+          predicates:
+            - Path=/inventory/**
+          filters:
+            - RewritePath=/inventory/(?<segment>.*), /api/v1/${segment}
+
+#/inventory/check/{productId}
+
+#http://gateway/products/list
+#http://gateway/inventory/check/123
